@@ -5,8 +5,8 @@ public class StockPrayseInfo : MonoBehaviour
 {
     public Dictionary<int, int> MineralPrayse = new Dictionary<int, int>()
    {
-       {1 , 25},
-       {2 , 50}
+       {1 , 1},
+       {2 , 1}
    };
 
     public int ReturPrayse(int ID)

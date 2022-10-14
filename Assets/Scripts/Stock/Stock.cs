@@ -4,12 +4,12 @@ using UnityEngine;
 public class Stock : MonoBehaviour
 {
     [SerializeField] private GameObject _stockMineralPrefab;
+    [SerializeField] private Many _manyCase;
     [SerializeField] private int _timeBeforSell;
 
     private StockPrayseInfo _stockPrayseInfo;
     private MineralStock _mineralStock = new MineralStock();
   
-    public Many ManyCase;
     private void Start()
     {
         _stockPrayseInfo = _stockMineralPrefab.GetComponent<StockPrayseInfo>();
@@ -34,7 +34,6 @@ public class Stock : MonoBehaviour
     {
         yield return new WaitForSeconds(_timeBeforSell);
         SellAllMineral();
-        Debug.Log("Corytine work!");
         ReturnCarytine();
        
     }
@@ -46,15 +45,14 @@ public class Stock : MonoBehaviour
 
     public void SellAllMineral()
     {
-        for (int i = 0; i > _mineralStock.AllMineralsId.Count; i++)
+        for (int i = 0; i < _mineralStock.AllMineralsId.Count; i++)
         {
-
-            int MineraPreyse = _stockPrayseInfo.ReturPrayse(_mineralStock.mineralStock[_mineralStock.AllMineralsId[i]]);
+            int MineraPreyse = _stockPrayseInfo.ReturPrayse(_mineralStock.AllMineralsId[i]);
             Debug.Log(MineraPreyse);
             int HowManyMineral = _mineralStock.mineralStock[_mineralStock.AllMineralsId[i]];
             Debug.Log(HowManyMineral);
-            ManyCase.AddMany(HowManyMineral * MineraPreyse);
-            _mineralStock.SetZiroy(_mineralStock.mineralStock[_mineralStock.AllMineralsId[i]]);
+            _manyCase.AddMany(HowManyMineral * MineraPreyse);
+            _mineralStock.SetZiroy(_mineralStock.AllMineralsId[i]);
         }
     }
 }

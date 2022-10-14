@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ public class MineralUpdater : MonoBehaviour
     public Sprite[] _skins ;
 
     public Dictionary<Type, IMineral> MineralCase;
-   
+
 
     //public Dictionary<int, int> PrayseUp = new Dictionary<int, int>()
     //{
@@ -24,7 +23,7 @@ public class MineralUpdater : MonoBehaviour
         MineralCase[typeof(Bronz)] = new Iron();
         MineralCase[typeof(Iron)] = new Bronz();
     }
-
+    private Iron iron = new Iron();
     private void OnEnable()
     {
         MineralLevelUp.LevelMineralWasCnages += UpdaitMineral;
@@ -45,12 +44,10 @@ public class MineralUpdater : MonoBehaviour
     public void UpIMineral(ref IMineral mineral)
     {
         mineral = MineralCase[mineral.GetType()];
-        Debug.Log("Mineral was Up!");
     }
 
     public void UpMineralSkin(ref Sprite _skin , int Level)
     {
         _skin = _skins[Level];
-        Debug.Log("Mineral Skin wsa up!");
     }
 }

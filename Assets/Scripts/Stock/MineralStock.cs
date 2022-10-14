@@ -13,22 +13,22 @@ public class MineralStock
     public void AddNewMineral(int ID )
     {   
         mineralStock[ID] += 1;
-       // Debug.Log(mineralStock[ID]);
     }
-
+    
     public void CollectionMineralId(int MineralId)
     {
-        if (MineralId <= 0) return; 
-
-        for (int i = 0; i > AllMineralsId.Count; i++)
-        {
-            if (AllMineralsId[i] == MineralId) return;
+        for (int i = 0; i < AllMineralsId.Count; i++)
+        {          
+            if (AllMineralsId[i] == MineralId)
+            {
+                return;
+            }
         }
-        AllMineralsId.Add(MineralId);
+        AllMineralsId.Add(MineralId);  
     }
-
     public void SetZiroy(int ID)
     {
+        
         mineralStock[ID] = 0;
     }
 }
