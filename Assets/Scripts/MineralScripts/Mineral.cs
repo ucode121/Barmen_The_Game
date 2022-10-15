@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mineral : MonoBehaviour
@@ -49,13 +46,16 @@ public class Mineral : MonoBehaviour
 
     public void LevelUp()
     {
+        print(1);
         if (_levelMineral == _maxMineralLevel)
         {
             Debug.Log("Вы достигли максимального левела");
             return;
         }
 
-        _levelMineral += 1;   
+        _levelMineral += 1;
+
+        _thisMineral.GetComponent<SpriteRenderer>().sprite = _sprite;
     }
 
 

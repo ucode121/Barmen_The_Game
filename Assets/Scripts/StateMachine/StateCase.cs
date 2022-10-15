@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StateCase : IBuyState
 {
-    private bool PlayerWantBuyUpForMineral = false ;
+    private bool PlayerWantBuyUpForMineral = true ;
 
     public void EnterPlayerWantBuyUpForMineralState()
     {
