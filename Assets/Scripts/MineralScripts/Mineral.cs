@@ -24,8 +24,8 @@ public class Mineral : MonoBehaviour
     private int _levelMineral;
     
     
-    public MineralLevelUp MineralLevelUp;
-    public MineralMainer MineralMainer;
+    [SerializeField]private MineralLevelUp MineralLevelUp;
+    [SerializeField]private MineralMainer MineralMainer;
 
     private void Start()
     {
