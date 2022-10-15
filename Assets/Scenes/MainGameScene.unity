@@ -815,8 +815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stockMineralPrefab: {fileID: 1751489897}
+  _manyCase: {fileID: 396384750}
   _timeBeforSell: 4
-  ManyCase: {fileID: 396384750}
 --- !u!4 &1751489901
 Transform:
   m_ObjectHideFlags: 0

@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class Mineral : MonoBehaviour
 {
+    [SerializeField] GameObject _thisMineral;
     [SerializeField] private int _maxMineralLevel;
     private IMineral _mineral;
-    [SerializeField] GameObject _thisMineral;
     private  Sprite _sprite;
-    
+    // “ут есть 2 переменные это _sprite , _thisMineral .
+    // ќни €вл€ютс€ заглушкой дл€ мешаники смены скина обекта при повышении уровн€ 
+    // Ќа данный момент при повышении уровн€ минерал ,MineralLevelUp.UpMineralLevel();
+    // этот метод отвечает за то чтобы поднималс€ уровень минерала, не мин€етс€ скин минерала
+    // ѕри написании кода учитывай что нужно чтобы его можно было редачить с юнити  
+    //ѕрехаб на который должен мен€тьс€ минерал при повышении есть в папке префабов
+    //Ёто тво€ задача 
+
+    // “акже нужно протестить смену самого ресурса то есть руда раньше была типа Bronz а сейчас перейшла в Iron
+    // етим займусь € 
 
     private IBuyState _buyState;
     private int _levelMineral;
