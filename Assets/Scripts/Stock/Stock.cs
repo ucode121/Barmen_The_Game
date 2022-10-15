@@ -35,22 +35,19 @@ public class Stock : MonoBehaviour
         yield return new WaitForSeconds(_timeBeforSell);
         SellAllMineral();
         ReturnCarytine();
-       
     }
 
     public void ReturnCarytine()
     {
         StartCoroutine(SellAll());
     }
-
+     
     public void SellAllMineral()
     {
         for (int i = 0; i < _mineralStock.AllMineralsId.Count; i++)
         {
             int MineraPreyse = _stockPrayseInfo.ReturPrayse(_mineralStock.AllMineralsId[i]);
-            Debug.Log(MineraPreyse);
             int HowManyMineral = _mineralStock.mineralStock[_mineralStock.AllMineralsId[i]];
-            Debug.Log(HowManyMineral);
             _manyCase.AddMany(HowManyMineral * MineraPreyse);
             _mineralStock.SetZiroy(_mineralStock.AllMineralsId[i]);
         }
